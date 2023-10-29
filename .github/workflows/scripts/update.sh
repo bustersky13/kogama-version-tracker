@@ -1,8 +1,6 @@
 #!/bin/bash
 
-API_URL=$API_URL
-MARKDOWN_FILE="../version.md"
-DOWNLOAD_DIR=$DOWNLOAD_DIR
+MARKDOWN_FILE="$PWD/version.md"
 
 LINK_CONTENT=$(curl -s $API_URL)
 
