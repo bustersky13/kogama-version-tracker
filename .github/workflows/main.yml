@@ -20,16 +20,49 @@ jobs:
       run: bash .github/workflows/scripts/update.sh
       env:
         API_URL: https://api-www.kgoma.com/v1/api/server/unity/standalone-url/
+        KOGAMA: WWW
+
+    - name: Upload [www] release assets
+      if: env.KOGAMA_FILE_WWW != ''
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: versions
+        tag_name: versions
+        files: $KOGAMA_FILE_WWW
 
     - name: Check kogama [br] Updates
       run: bash .github/workflows/scripts/update.sh
       env:
         API_URL: https://api-br.kgoma.com/v1/api/server/unity/standalone-url/
+        KOGAMA: BR
+
+    - name: Upload [br] release assets
+      if: env.KOGAMA_FILE_BR != ''
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: versions
+        tag_name: versions
+        files: $KOGAMA_FILE_BR
 
     - name: Check kogama [friends] Updates
       run: bash .github/workflows/scripts/update.sh
       env:
         API_URL: https://api-friends.kgoma.com/v1/api/server/unity/standalone-url/
+        KOGAMA: FRIENDS
+
+    - name: Upload [friends] release assets
+      if: env.KOGAMA_FILE_FRIENDS != ''
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: versions
+        tag_name: versions
+        files: $KOGAMA_FILE_FRIENDS
 
     - name: Order markdown version table
       if: env.KOGAMA_UUIDS != ''
@@ -47,14 +80,3 @@ jobs:
         git add version.md
         git commit -m "Add new version" || echo "No changes to commit"
         git push
-
-    - name: Upload release assets
-      if: env.KOGAMA_UUIDS != ''
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: https://api.github.com/repos/$GITHUB_REPOSITORY/releases/tags/versions
-        asset_path: downloads/kogama-*.zip
-        asset_name: kogama-*.zip
-        asset_content_type: application/zip
