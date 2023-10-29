@@ -7,6 +7,8 @@ LINK_CONTENT=$(curl -s $API_URL)
 UUID=$(echo $LINK_CONTENT | cut -d'/' -f 4)
 TIMESTAMP=$(echo $LINK_CONTENT | cut -d'=' -f 2)
 
+echo "TIMESTAMP/UUID: $TIMESTAMP/$UUID"
+
 if ! grep -q "x$UUID" $MARKDOWN_FILE; then
     ZIP_FILE="$DOWNLOAD_DIR/$UUID.zip"
     curl -s -o $ZIP_FILE $LINK_CONTENT
@@ -21,6 +23,5 @@ if ! grep -q "x$UUID" $MARKDOWN_FILE; then
     mv $ZIP_FILE "$DOWNLOAD_DIR/$DOWNLOAD_NAME"
 
     echo "$UUID|$VERSION|$IL2CPP|$TIMESTAMP|download ($SIZE)" >> $MARKDOWN_FILE
-
-    echo "version found: [$VERSION]($UUID)
+    echo "KOGAMA_UUIDS=$UUID;$KOGAMA_UUIDS" >> $GITHUB_ENV
 fi
