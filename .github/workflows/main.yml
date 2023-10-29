@@ -30,7 +30,7 @@ jobs:
       with:
         name: versions
         tag_name: versions
-        files: $KOGAMA_FILE_WWW
+        files: ${{ env.KOGAMA_FILE_WWW }}
 
     - name: Check kogama [br] Updates
       run: bash .github/workflows/scripts/update.sh
@@ -46,7 +46,7 @@ jobs:
       with:
         name: versions
         tag_name: versions
-        files: $KOGAMA_FILE_BR
+        files: ${{ env.KOGAMA_FILE_BR }}
 
     - name: Check kogama [friends] Updates
       run: bash .github/workflows/scripts/update.sh
@@ -62,7 +62,7 @@ jobs:
       with:
         name: versions
         tag_name: versions
-        files: $KOGAMA_FILE_FRIENDS
+        files: ${{ env.KOGAMA_FILE_FRIENDS }}
 
     - name: Order markdown version table
       if: env.KOGAMA_UUIDS != ''
