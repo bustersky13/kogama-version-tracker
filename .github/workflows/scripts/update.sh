@@ -21,4 +21,6 @@ if ! grep -q "x$UUID" $MARKDOWN_FILE; then
     mv $ZIP_FILE "$DOWNLOAD_DIR/$DOWNLOAD_NAME"
 
     echo "$UUID|$VERSION|$IL2CPP|$TIMESTAMP|download ($SIZE)" >> $MARKDOWN_FILE
+
+    echo "version found: [$VERSION]($UUID)
 fi
