@@ -13,8 +13,8 @@ jobs:
 
     - name: Set up environment
       run: |
-        mkdir downloads
-        echo "DOWNLOAD_DIR=$(pwd)/downloads" >> $GITHUB_ENV
+        mkdir "$PWD/downloads"
+        echo "DOWNLOAD_DIR=$PWD/downloads" >> $GITHUB_ENV
 
     - name: Check kogama [www] Updates
       run: bash .github/workflows/scripts/update.sh
