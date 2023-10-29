@@ -44,8 +44,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add versions.md
-        git commit -m "Add new versions" || echo "No changes to commit"
+        git add version.md
+        git commit -m "Add new version" || echo "No changes to commit"
         git push
 
     - name: Upload release assets

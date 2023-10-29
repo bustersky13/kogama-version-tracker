@@ -1,8 +1,8 @@
 #!/bin/bash
 
-API_URL=$API_URL  
-MARKDOWN_FILE="../versions.md"
-DOWNLOAD_DIR=$DOWNLOAD_DIR  
+API_URL=$API_URL
+MARKDOWN_FILE="../version.md"
+DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 LINK_CONTENT=$(curl -s $API_URL)
 
@@ -10,17 +10,17 @@ UUID=$(echo $LINK_CONTENT | cut -d'/' -f 4)
 TIMESTAMP=$(echo $LINK_CONTENT | cut -d'=' -f 2)
 
 if ! grep -q "x$UUID" $MARKDOWN_FILE; then
-    ZIP_FILE="$DOWNLOAD_DIR/$UUID.zip"  
+    ZIP_FILE="$DOWNLOAD_DIR/$UUID.zip"
     curl -s -o $ZIP_FILE $LINK_CONTENT
 
     VERSION=$(unzip -p $ZIP_FILE Version.txt)
     IL2CPP=$(unzip -l $ZIP_FILE | grep -q 'kogama_Data/il2cpp_data' && echo ":heavy_check_mark:" || echo ":x:")
     SIZE=$(du -h $ZIP_FILE | cut -f1)
-    
+
     DOWNLOAD_NAME="kogama-$VERSION-$UUID.zip"
     DOWNLOAD_LINK="https://github.com/$GITHUB_REPOSITORY/releases/download/versions/$DOWNLOAD_NAME"
 
-    mv $ZIP_FILE "$DOWNLOAD_DIR/$DOWNLOAD_NAME"  
+    mv $ZIP_FILE "$DOWNLOAD_DIR/$DOWNLOAD_NAME"
 
     echo "$UUID|$VERSION|$IL2CPP|$TIMESTAMP|download ($SIZE)" >> $MARKDOWN_FILE
 fi
