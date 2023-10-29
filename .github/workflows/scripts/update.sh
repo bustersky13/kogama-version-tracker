@@ -2,6 +2,9 @@
 
 MARKDOWN_FILE="$PWD/version.md"
 
+echo "MARKDOWN_DIR: $MARKDOWN_FILE"
+echo $(cat $MARKDOWN_FILE)
+
 LINK_CONTENT=$(curl -s $API_URL)
 
 UUID=$(echo $LINK_CONTENT | cut -d'/' -f 4)
@@ -9,7 +12,7 @@ TIMESTAMP=$(echo $LINK_CONTENT | cut -d'=' -f 2)
 
 echo "TIMESTAMP/UUID: $TIMESTAMP/$UUID"
 
-if ! grep -q "x$UUID" $MARKDOWN_FILE; then
+if ! grep -q "$UUID" $MARKDOWN_FILE; then
     ZIP_FILE="$DOWNLOAD_DIR/$UUID.zip"
     curl -s -o $ZIP_FILE $LINK_CONTENT
 
