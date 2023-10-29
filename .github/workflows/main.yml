@@ -35,9 +35,9 @@ jobs:
       if: env.KOGAMA_UUIDS != ''
       run: |
         {
-          head -n 2 "../version.md"
-          tail -n +3 "../version.md" | sort -r -t '|' -k4 -n
-        } > temp_version.md && mv temp_version.md "../version.md"
+          head -n 2 "$PWD/version.md"
+          tail -n +3 "$PWD/version.md" | sort -r -t '|' -k4 -n
+        } > temp_version.md && mv temp_version.md "$PWD/version.md"
 
     - name: Commit and push if there are changes
       if: env.KOGAMA_UUIDS != ''
@@ -55,6 +55,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: https://api.github.com/repos/$GITHUB_REPOSITORY/releases/tags/versions
-        asset_path: ./downloads/kogama-*.zip
+        asset_path: downloads/kogama-*.zip
         asset_name: kogama-*.zip
         asset_content_type: application/zip

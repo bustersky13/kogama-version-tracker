@@ -1,10 +1,6 @@
 #!/bin/bash
 
 MARKDOWN_FILE="$PWD/version.md"
-
-echo "MARKDOWN_DIR: $MARKDOWN_FILE"
-echo $(cat $MARKDOWN_FILE)
-
 LINK_CONTENT=$(curl -s $API_URL)
 
 UUID=$(echo $LINK_CONTENT | cut -d'/' -f 4)
@@ -25,6 +21,6 @@ if ! grep -q "$UUID" $MARKDOWN_FILE; then
 
     mv $ZIP_FILE "$DOWNLOAD_DIR/$DOWNLOAD_NAME"
 
-    echo "$UUID|$VERSION|$IL2CPP|$TIMESTAMP|download ($SIZE)" >> $MARKDOWN_FILE
+    echo "$UUID|$VERSION|$IL2CPP|$TIMESTAMP|[download ($SIZE)]($DOWNLOAD_LINK)" >> $MARKDOWN_FILE
     echo "KOGAMA_UUIDS=$UUID;$KOGAMA_UUIDS" >> $GITHUB_ENV
 fi
