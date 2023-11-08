@@ -3,7 +3,7 @@
 MARKDOWN_FILE="$PWD/version.md"
 LINK_CONTENT=$(curl -s -f $API_URL)
 
-if [$? -ne 0]; then
+if [ $? -ne 0 ]; then
     echo "Unable to get download link for kogama [$KOGAMA]"
     exit 1
 fi
