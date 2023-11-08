@@ -1,7 +1,12 @@
 #!/bin/bash
 
 MARKDOWN_FILE="$PWD/version.md"
-LINK_CONTENT=$(curl -s $API_URL)
+LINK_CONTENT=$(curl -s -f $API_URL)
+
+if [$? -ne 0]; then
+    echo "Unable to get download link for kogama [$KOGAMA]"
+    exit 1
+fi
 
 UUID=$(echo $LINK_CONTENT | cut -d'/' -f 4)
 TIMESTAMP=$(echo $LINK_CONTENT | cut -d'=' -f 2)
