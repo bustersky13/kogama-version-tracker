@@ -69,7 +69,7 @@ jobs:
       run: |
         {
           head -n 2 "$PWD/version.md"
-          tail -n +3 "$PWD/version.md" | sort -r -t '|' -k4 -n
+          tail -n +3 "$PWD/version.md" | sort -r -t '|' -k2,2 -k4,4
         } > temp_version.md && mv temp_version.md "$PWD/version.md"
 
     - name: Commit and push if there are changes
