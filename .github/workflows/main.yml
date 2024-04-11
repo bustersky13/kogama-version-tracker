@@ -28,8 +28,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: versions
-        tag_name: versions
+        name: ${{ env.KOGAMA_VERSION_WWW }}
+        tag_name: ${{ env.KOGAMA_VERSION_WWW }}
         files: ${{ env.KOGAMA_FILE_WWW }}
 
     - name: Check kogama [br] Updates
@@ -44,8 +44,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: versions
-        tag_name: versions
+        name: ${{ env.KOGAMA_VERSION_BR }}
+        tag_name: ${{ env.KOGAMA_VERSION_BR }}
         files: ${{ env.KOGAMA_FILE_BR }}
 
     - name: Check kogama [friends] Updates
@@ -60,8 +60,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: versions
-        tag_name: versions
+        name: ${{ env.KOGAMA_VERSION_FRIENDS }}
+        tag_name: ${{ env.KOGAMA_VERSION_FRIENDS }}
         files: ${{ env.KOGAMA_FILE_FRIENDS }}
 
     - name: Order markdown version table
