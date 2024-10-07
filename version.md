@@ -1,5 +1,6 @@
 uuid|version|il2cpp|timestamp|download
 -|-|-|-|-
+44f5a353-a65f-4e27-8f43-be0580ae5f3b|301008|:heavy_check_mark:|1728300100|[download (32M)](https://github.com/bustersky13/kogama-version-tracker/releases/download/versions/kogama-301008-44f5a353-a65f-4e27-8f43-be0580ae5f3b.zip)
 e18d2834-5bca-4b96-a547-601461517b3b|301007|:heavy_check_mark:|1727433579|[download (32M)](https://github.com/bustersky13/kogama-version-tracker/releases/download/versions/kogama-301007-e18d2834-5bca-4b96-a547-601461517b3b.zip)
 4e936dd2-d090-4e63-84f8-a3da2c23e973|301006|:heavy_check_mark:|1727165719|[download (32M)](https://github.com/bustersky13/kogama-version-tracker/releases/download/versions/kogama-301006-4e936dd2-d090-4e63-84f8-a3da2c23e973.zip)
 efc481cf-a3a3-48ce-99a7-f51ced82b8d8|301006|:heavy_check_mark:|1727164459|[download (32M)](https://github.com/bustersky13/kogama-version-tracker/releases/download/versions/kogama-301006-efc481cf-a3a3-48ce-99a7-f51ced82b8d8.zip)
