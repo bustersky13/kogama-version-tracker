@@ -583,4 +583,5 @@ e55c6cdf-ea74-4fcd-8a4d-412ed4a81171|125014|:x:|1441792809|[download (17M)](http
 d939a53e-6a06-427d-8aec-d62235bce17f|125013|:x:|1441185540|[download (17M)](https://github.com/bustersky13/version-storage/releases/download/versions/kogama-125013-d939a53e-6a06-427d-8aec-d62235bce17f.zip)
 c0bad005-c72e-4fc5-bc94-ca906f179fc5|125013|:x:|1440764386|[download (17M)](https://github.com/bustersky13/version-storage/releases/download/versions/kogama-125013-c0bad005-c72e-4fc5-bc94-ca906f179fc5.zip)
 d151586e-3d66-4fde-aac7-7fc58762717e|125013|:x:|1439992819|[download (17M)](https://github.com/bustersky13/version-storage/releases/download/versions/kogama-125013-d151586e-3d66-4fde-aac7-7fc58762717e.zip)
+19664389-b175-409c-8753-f6611d0c725b||:heavy_check_mark:|1763042825|[download (43M)](https://github.com/bustersky13/kogama-version-tracker/releases/download/versions/kogama--19664389-b175-409c-8753-f6611d0c725b.zip)
 ca854019-6906-4fce-9471-c6450374d626||:heavy_check_mark:|1762960952|[download (43M)](https://github.com/bustersky13/kogama-version-tracker/releases/download/versions/kogama--ca854019-6906-4fce-9471-c6450374d626.zip)
